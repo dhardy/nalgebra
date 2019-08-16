@@ -1,5 +1,4 @@
 use num::{One, Zero};
-// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 

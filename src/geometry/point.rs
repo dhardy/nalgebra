@@ -3,7 +3,6 @@ use num::One;
 use core::cmp::Ordering;
 use core::fmt;
 use core::hash;
-// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 

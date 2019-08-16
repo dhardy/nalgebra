@@ -13,7 +13,7 @@ use crate::geometry::Point;
 #[cfg(feature = "mint")]
 use mint;
 #[cfg(feature = "mint")]
-use std::convert::{AsMut, AsRef, From, Into};
+use core::convert::{AsMut, AsRef, From, Into};
 /*
  * This file provides the following conversions:
  * =============================================

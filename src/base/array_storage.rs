@@ -1,6 +1,5 @@
 use core::fmt::{self, Debug, Formatter};
 use core::hash::{Hash, Hasher};
-// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 use core::ops::{Deref, DerefMut, Mul};

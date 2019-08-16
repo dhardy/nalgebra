@@ -1,9 +1,9 @@
 use alga::general::ClosedAdd;
 use num::Zero;
-use std::iter;
-use std::marker::PhantomData;
-use std::ops::Range;
-use std::slice;
+use core::iter;
+use core::marker::PhantomData;
+use core::ops::Range;
+use core::slice;
 
 use crate::allocator::Allocator;
 use crate::sparse::cs_utils;

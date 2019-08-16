@@ -2,7 +2,6 @@ use approx::{AbsDiffEq, RelativeEq, UlpsEq};
 use core::fmt;
 use core::hash;
 use core::marker::PhantomData;
-// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 

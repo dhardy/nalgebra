@@ -9,7 +9,7 @@ use rand::Rng;
 #[doc(hidden)]
 #[inline]
 pub fn reject<G: Gen, F: FnMut(&T) -> bool, T: Arbitrary>(g: &mut G, f: F) -> T {
-    use std::iter;
+    use core::iter;
     iter::repeat(())
         .map(|_| Arbitrary::arbitrary(g))
         .find(f)

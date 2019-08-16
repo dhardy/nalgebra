@@ -1,5 +1,4 @@
 use approx::RelativeEq;
-// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 use core::mem;

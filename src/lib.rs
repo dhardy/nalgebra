@@ -87,7 +87,7 @@ an optimized set of tools for computer graphics and physics. Those features incl
     html_root_url = "https://nalgebra.org/rustdoc"
 )]
 #![no_std]
-#[cfg(feature = "std")]
+#[cfg(any(feature = "std", feature = "io", feature = "abomonation-serialize"))]
 extern crate std;
 
 #[cfg(feature = "alloc")]

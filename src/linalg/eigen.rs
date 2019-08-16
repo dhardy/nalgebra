@@ -3,9 +3,7 @@ use serde::{Serialize, Deserialize};
 
 use alga::general::ComplexField;
 use num_complex::Complex;
-use std::cmp;
-use std::fmt::Display;
-use std::ops::MulAssign;
+use core::{cmp, fmt::Display, ops::MulAssign};
 
 use crate::allocator::Allocator;
 use crate::base::dimension::{Dim, DimDiff, DimSub, Dynamic, U1, U2, U3};
