@@ -1,4 +1,4 @@
-#[cfg(all(feature = "alloc", not(feature = "std")))]
+#[cfg(feature = "alloc")]
 use alloc::vec::Vec;
 
 use num::{One, Zero};
@@ -285,7 +285,7 @@ where DefaultAllocator: Allocator<N, R, C>
                 }
             }
             _ => {
-                #[cfg(any(feature = "std", feature = "alloc"))]
+                #[cfg(feature = "alloc")]
                 {
                     // XXX: use a GenericArray instead.
                     let mut known_basis = Vec::new();
@@ -310,10 +310,10 @@ where DefaultAllocator: Allocator<N, R, C>
                         }
                     }
                 }
-                #[cfg(all(not(feature = "std"), not(feature = "alloc")))]
+                #[cfg(not(feature = "alloc"))]
                 {
                     panic!("Cannot compute the orthogonal subspace basis of a vector with a dimension greater than 3 \
-                            if #![no_std] is enabled and the 'alloc' feature is not enabled.")
+                            without an enabled 'alloc' feature.")
                 }
             }
         }

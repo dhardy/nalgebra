@@ -3,7 +3,7 @@
 use crate::base::{Dim, DimName, DimDiff, DimSub, Dynamic, Matrix, MatrixSlice, MatrixSliceMut, Scalar, U1};
 use crate::base::storage::{Storage, StorageMut};
 
-use std::ops;
+use core::ops;
 
 // N.B.: Not a public trait!
 trait DimRange<D: Dim>
@@ -68,7 +68,7 @@ impl<D: Dim> DimRange<D> for ops::Range<usize> {
 
 #[test]
 fn dimrange_range_usize() {
-    use std::usize::MAX;
+    use core::usize::MAX;
     use crate::base::dimension::U0;
     assert_eq!(DimRange::contained_by(&(0..0), U0), false);
     assert_eq!(DimRange::contained_by(&(0..1), U0), false);
@@ -100,7 +100,7 @@ impl<D: Dim> DimRange<D> for ops::RangeFrom<usize> {
 
 #[test]
 fn dimrange_rangefrom_usize() {
-    use std::usize::MAX;
+    use core::usize::MAX;
     use crate::base::dimension::U0;
     assert_eq!(DimRange::contained_by(&(0..), U0), false);
     assert_eq!(DimRange::contained_by(&(0..), U0), false);
@@ -189,7 +189,7 @@ impl<D: Dim> DimRange<D> for ops::RangeInclusive<usize> {
 
 #[test]
 fn dimrange_rangeinclusive_usize() {
-    use std::usize::MAX;
+    use core::usize::MAX;
     use crate::base::dimension::U0;
     assert_eq!(DimRange::contained_by(&(0..=0), U0), false);
     assert_eq!(DimRange::contained_by(&(0..=0), U1), true);
@@ -224,7 +224,7 @@ impl<D: Dim> DimRange<D> for ops::RangeTo<usize>
 
 #[test]
 fn dimrange_rangeto_usize() {
-    use std::usize::MAX;
+    use core::usize::MAX;
     use crate::base::dimension::U0;
     assert_eq!(DimRange::contained_by(&(..0), U0), true);
     assert_eq!(DimRange::contained_by(&(..1), U0), false);
@@ -256,7 +256,7 @@ impl<D: Dim> DimRange<D> for ops::RangeToInclusive<usize>
 
 #[test]
 fn dimrange_rangetoinclusive_usize() {
-    use std::usize::MAX;
+    use core::usize::MAX;
     use crate::base::dimension::U0;
     assert_eq!(DimRange::contained_by(&(..=0), U0), false);
     assert_eq!(DimRange::contained_by(&(..=1), U0), false);

@@ -82,13 +82,19 @@ an optimized set of tools for computer graphics and physics. Those features incl
 #![deny(unused_qualifications)]
 #![deny(unused_results)]
 #![deny(missing_docs)]
-#![warn(incoherent_fundamental_impls)]
 #![doc(
     html_favicon_url = "https://nalgebra.org/img/favicon.ico",
     html_root_url = "https://nalgebra.org/rustdoc"
 )]
-#![cfg_attr(not(feature = "std"), no_std)]
-#![cfg_attr(all(feature = "alloc", not(feature = "std")), feature(alloc))]
+#![no_std]
+#[cfg(feature = "std")]
+extern crate std;
+
+#[cfg(feature = "alloc")]
+extern crate alloc;
+
+#[macro_use]
+extern crate approx;
 
 #[cfg(feature = "arbitrary")]
 extern crate quickcheck;
@@ -96,37 +102,18 @@ extern crate quickcheck;
 #[cfg(feature = "serde")]
 extern crate serde;
 #[cfg(feature = "serde")]
-#[macro_use]
 extern crate serde_derive;
 
 #[cfg(feature = "abomonation-serialize")]
 extern crate abomonation;
-
 #[cfg(feature = "mint")]
 extern crate mint;
-
-#[macro_use]
-extern crate approx;
-extern crate generic_array;
-#[cfg(feature = "std")]
+#[cfg(feature = "matrixmultiply")]
 extern crate matrixmultiply;
-extern crate num_complex;
 extern crate num_traits as num;
-extern crate num_rational;
-extern crate rand;
-extern crate typenum;
-
-extern crate alga;
-
-#[cfg(all(feature = "alloc", not(feature = "std")))]
-extern crate alloc;
-
-#[cfg(not(feature = "std"))]
-extern crate core as std;
 
 #[cfg(feature = "io")]
 extern crate pest;
-#[macro_use]
 #[cfg(feature = "io")]
 extern crate pest_derive;
 
@@ -140,18 +127,13 @@ pub mod linalg;
 #[cfg(feature = "sparse")]
 pub mod sparse;
 
-#[cfg(feature = "std")]
-#[deprecated(
-    note = "The 'core' module is being renamed to 'base' to avoid conflicts with the 'core' crate."
-)]
-pub use base as core;
 pub use crate::base::*;
 pub use crate::geometry::*;
 pub use crate::linalg::*;
 #[cfg(feature = "sparse")]
 pub use crate::sparse::*;
 
-use std::cmp::{self, Ordering, PartialOrd};
+use core::cmp::{self, Ordering, PartialOrd};
 
 use alga::general::{
     Additive, AdditiveGroup, Identity, TwoSidedInverse, JoinSemilattice, Lattice, MeetSemilattice,

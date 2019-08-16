@@ -1,7 +1,7 @@
 use num::{One, Signed, Zero};
-use std::cmp::{PartialOrd, Ordering};
-use std::iter;
-use std::ops::{
+use core::cmp::{PartialOrd, Ordering};
+use core::iter;
+use core::ops::{
     Add, AddAssign, Div, DivAssign, Index, IndexMut, Mul, MulAssign, Neg, Sub, SubAssign,
 };
 

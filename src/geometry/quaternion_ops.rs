@@ -50,7 +50,7 @@
  *
  */
 
-use std::ops::{
+use core::ops::{
     Add, AddAssign, Div, DivAssign, Index, IndexMut, Mul, MulAssign, Neg, Sub, SubAssign,
 };
 

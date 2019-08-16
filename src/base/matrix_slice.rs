@@ -1,6 +1,6 @@
-use std::marker::PhantomData;
-use std::ops::{Range, RangeFrom, RangeFull, RangeTo};
-use std::slice;
+use core::marker::PhantomData;
+use core::ops::{Range, RangeFrom, RangeFull, RangeTo};
+use core::slice;
 
 use crate::base::allocator::Allocator;
 use crate::base::default_allocator::DefaultAllocator;

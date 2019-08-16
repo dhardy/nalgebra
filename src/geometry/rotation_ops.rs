@@ -18,7 +18,7 @@
  */
 
 use num::{One, Zero};
-use std::ops::{Div, DivAssign, Index, Mul, MulAssign};
+use core::ops::{Div, DivAssign, Index, Mul, MulAssign};
 
 use alga::general::{ClosedAdd, ClosedMul};
 

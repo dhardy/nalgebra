@@ -1,6 +1,6 @@
 //! Abstract definition of a matrix data storage allocator.
 
-use std::any::Any;
+use core::any::Any;
 
 use crate::base::constraint::{SameNumberOfColumns, SameNumberOfRows, ShapeConstraint};
 use crate::base::dimension::{Dim, U1};

@@ -1,6 +1,5 @@
-use std::any::Any;
-use std::any::TypeId;
-use std::fmt::Debug;
+use core::any::{Any, TypeId};
+use core::fmt::Debug;
 
 /// The basic scalar type for all structures of `nalgebra`.
 ///

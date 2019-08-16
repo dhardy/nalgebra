@@ -1,6 +1,6 @@
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
 use num_complex::Complex;
-use std::fmt;
+use core::fmt;
 
 use alga::general::RealField;
 use crate::base::{Matrix2, Matrix3, Unit, Vector1, Vector2};

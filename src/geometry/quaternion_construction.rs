@@ -6,8 +6,8 @@ use crate::base::storage::Owned;
 use quickcheck::{Arbitrary, Gen};
 
 use num::{One, Zero};
-use rand::distributions::{Distribution, OpenClosed01, Standard};
-use rand::Rng;
+#[cfg(feature = "rand")]
+use rand::{Rng, distributions::{Distribution, OpenClosed01, Standard}};
 
 use alga::general::RealField;
 
@@ -124,6 +124,7 @@ impl<N: RealField> Zero for Quaternion<N> {
     }
 }
 
+#[cfg(feature = "rand")]
 impl<N: RealField> Distribution<Quaternion<N>> for Standard
 where Standard: Distribution<N>
 {
@@ -685,10 +686,11 @@ impl<N: RealField> One for UnitQuaternion<N> {
     }
 }
 
+#[cfg(feature = "rand")]
 impl<N: RealField> Distribution<UnitQuaternion<N>> for Standard
 where OpenClosed01: Distribution<N>
 {
-    /// Generate a uniformly distributed random rotation quaternion.
+    /// Generate a uniformly distributed `om rotation quaternion.
     #[inline]
     fn sample<'a, R: Rng + ?Sized>(&self, rng: &'a mut R) -> UnitQuaternion<N> {
         // Ken Shoemake's Subgroup Algorithm

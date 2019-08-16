@@ -1,14 +1,15 @@
 use num::{One, Zero};
+// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
-use std::any::TypeId;
-use std::cmp::Ordering;
-use std::fmt;
-use std::hash::{Hash, Hasher};
-use std::marker::PhantomData;
-use std::mem;
+use core::any::TypeId;
+use core::cmp::Ordering;
+use core::fmt;
+use core::hash::{Hash, Hasher};
+use core::marker::PhantomData;
+use core::mem;
 
 #[cfg(feature = "serde-serialize")]
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
@@ -1137,7 +1138,7 @@ impl<N: Scalar + One + Zero, D: DimAdd<U1> + IsNotStaticOne, S: Storage<N, D, D>
     where DefaultAllocator: Allocator<N, DimSum<D, U1>, DimSum<D, U1>> {
         assert!(self.is_square(), "Only square matrices can currently be transformed to homogeneous coordinates.");
         let dim = DimSum::<D, U1>::from_usize(self.nrows() + 1);
-        let mut res = MatrixN::identity_generic(dim, dim); 
+        let mut res = MatrixN::identity_generic(dim, dim);
         res.generic_slice_mut::<D, D>((0, 0), self.data.shape()).copy_from(&self);
         res
     }

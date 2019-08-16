@@ -6,7 +6,7 @@ use crate::allocator::{Allocator, Reallocator};
 use crate::base::{DefaultAllocator, Matrix, MatrixMN, MatrixN, Scalar};
 use crate::constraint::{SameNumberOfRows, ShapeConstraint};
 use crate::dimension::{Dim, DimMin, DimMinimum};
-use std::mem;
+use core::mem;
 use crate::storage::{Storage, StorageMut};
 
 use crate::linalg::PermutationSequence;

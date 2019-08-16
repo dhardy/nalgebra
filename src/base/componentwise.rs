@@ -1,7 +1,7 @@
 // Non-conventional component-wise operators.
 
 use num::{Signed, Zero};
-use std::ops::{Add, Mul};
+use core::ops::{Add, Mul};
 
 use alga::general::{ClosedDiv, ClosedMul};
 

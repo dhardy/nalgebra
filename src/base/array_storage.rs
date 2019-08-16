@@ -1,8 +1,9 @@
-use std::fmt::{self, Debug, Formatter};
-use std::hash::{Hash, Hasher};
+use core::fmt::{self, Debug, Formatter};
+use core::hash::{Hash, Hasher};
+// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
-use std::ops::{Deref, DerefMut, Mul};
+use core::ops::{Deref, DerefMut, Mul};
 
 #[cfg(feature = "serde-serialize")]
 use serde::de::{Error, SeqAccess, Visitor};
@@ -11,9 +12,9 @@ use serde::ser::SerializeSeq;
 #[cfg(feature = "serde-serialize")]
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 #[cfg(feature = "serde-serialize")]
-use std::marker::PhantomData;
+use core::marker::PhantomData;
 #[cfg(feature = "serde-serialize")]
-use std::mem;
+use core::mem;
 
 #[cfg(feature = "abomonation-serialize")]
 use abomonation::Abomonation;

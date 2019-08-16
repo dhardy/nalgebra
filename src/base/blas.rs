@@ -1,9 +1,9 @@
 use alga::general::{ClosedAdd, ClosedMul, ComplexField};
-#[cfg(feature = "std")]
+#[cfg(feature = "matrixmultiply")]
 use matrixmultiply;
 use num::{One, Signed, Zero};
-#[cfg(feature = "std")]
-use std::mem;
+#[cfg(feature = "matrixmultiply")]
+use core::mem;
 
 use crate::base::allocator::Allocator;
 use crate::base::constraint::{
@@ -989,7 +989,7 @@ where N: Scalar + Zero + ClosedAdd + ClosedMul
     {
         let ncols1 = self.ncols();
 
-        #[cfg(feature = "std")]
+        #[cfg(feature = "matrixmultiply")]
         {
             // matrixmultiply can be used only if the std feature is available.
             let nrows1 = self.nrows();

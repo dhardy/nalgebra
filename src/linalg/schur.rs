@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use approx::AbsDiffEq;
 use alga::general::{ComplexField, RealField};
 use num_complex::Complex as NumComplex;
-use std::cmp;
+use core::cmp;
 
 use crate::allocator::Allocator;
 use crate::base::dimension::{Dim, DimDiff, DimSub, Dynamic, U1, U2, U3};

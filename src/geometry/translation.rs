@@ -1,7 +1,8 @@
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
 use num::{One, Zero};
-use std::fmt;
-use std::hash;
+use core::fmt;
+use core::hash;
+// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 

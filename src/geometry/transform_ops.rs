@@ -1,5 +1,5 @@
 use num::{One, Zero};
-use std::ops::{Div, DivAssign, Index, IndexMut, Mul, MulAssign};
+use core::ops::{Div, DivAssign, Index, IndexMut, Mul, MulAssign};
 
 use alga::general::{ClosedAdd, ClosedMul, RealField, SubsetOf};
 

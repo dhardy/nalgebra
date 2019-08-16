@@ -1,7 +1,7 @@
 //! Functions for balancing a matrix.
 
 use alga::general::RealField;
-use std::ops::{DivAssign, MulAssign};
+use core::ops::{DivAssign, MulAssign};
 
 use crate::allocator::Allocator;
 use crate::base::dimension::{Dim, U1};

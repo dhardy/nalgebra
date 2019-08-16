@@ -5,9 +5,11 @@ use quickcheck::{Arbitrary, Gen};
 
 use alga::general::RealField;
 use num::Zero;
-use rand::distributions::{Distribution, OpenClosed01, Standard, uniform::SampleUniform};
-use rand::Rng;
-use std::ops::Neg;
+#[cfg(feature = "rand")]
+use rand::{Rng, distributions::{
+    Distribution, OpenClosed01, Standard, uniform::SampleUniform
+}};
+use core::ops::Neg;
 
 use crate::base::dimension::{U1, U2, U3};
 use crate::base::storage::Storage;
@@ -230,6 +232,7 @@ impl<N: RealField> Rotation2<N> {
     }
 }
 
+#[cfg(feature = "rand")]
 impl<N: RealField> Distribution<Rotation2<N>> for Standard
 where N: SampleUniform
 {
@@ -817,6 +820,7 @@ impl<N: RealField> Rotation3<N> {
     }
 }
 
+#[cfg(feature = "rand")]
 impl<N: RealField> Distribution<Rotation3<N>> for Standard
 where OpenClosed01: Distribution<N>, N: SampleUniform
 {

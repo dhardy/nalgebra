@@ -1,8 +1,9 @@
 use approx::RelativeEq;
+// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
-use std::mem;
-use std::ops::{Deref, Neg};
+use core::mem;
+use core::ops::{Deref, Neg};
 
 #[cfg(feature = "serde-serialize")]
 use serde::{Deserialize, Deserializer, Serialize, Serializer};

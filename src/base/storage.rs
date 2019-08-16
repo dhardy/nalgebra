@@ -1,7 +1,6 @@
 //! Abstract definition of a matrix data storage.
 
-use std::fmt::Debug;
-use std::mem;
+use core::{mem, fmt::Debug};
 
 use crate::base::allocator::{Allocator, SameShapeC, SameShapeR};
 use crate::base::default_allocator::DefaultAllocator;

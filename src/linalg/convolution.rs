@@ -1,4 +1,4 @@
-use std::cmp;
+use core::cmp;
 
 use crate::base::allocator::Allocator;
 use crate::base::default_allocator::DefaultAllocator;

@@ -1,7 +1,7 @@
 //! Matrix iterators.
 
-use std::marker::PhantomData;
-use std::mem;
+use core::marker::PhantomData;
+use core::mem;
 
 use crate::base::dimension::{Dim, U1};
 use crate::base::storage::{Storage, StorageMut};

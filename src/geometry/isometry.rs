@@ -1,9 +1,10 @@
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
-use std::fmt;
-use std::hash;
+use core::fmt;
+use core::hash;
+use core::marker::PhantomData;
+// FIXME
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
-use std::marker::PhantomData;
 
 #[cfg(feature = "serde-serialize")]
 use serde::{Deserialize, Serialize};

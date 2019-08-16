@@ -1,5 +1,5 @@
-use std::mem;
-use std::ops::{Deref, DerefMut};
+use core::mem;
+use core::ops::{Deref, DerefMut};
 
 use crate::base::allocator::Allocator;
 use crate::base::coordinates::{X, XY, XYZ, XYZW, XYZWA, XYZWAB};

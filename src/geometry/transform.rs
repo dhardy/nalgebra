@@ -1,7 +1,7 @@
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
-use std::any::Any;
-use std::fmt::Debug;
-use std::marker::PhantomData;
+use core::any::Any;
+use core::fmt::Debug;
+use core::marker::PhantomData;
 
 #[cfg(feature = "serde-serialize")]
 use serde::{Deserialize, Deserializer, Serialize, Serializer};

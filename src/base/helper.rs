@@ -1,3 +1,4 @@
+#![cfg(feature = "rand")]
 #[cfg(feature = "arbitrary")]
 use quickcheck::{Arbitrary, Gen};
 use rand::distributions::{Distribution, Standard};
@@ -19,6 +20,6 @@ pub fn reject<G: Gen, F: FnMut(&T) -> bool, T: Arbitrary>(g: &mut G, f: F) -> T 
 #[inline]
 pub fn reject_rand<G: Rng + ?Sized, F: FnMut(&T) -> bool, T>(g: &mut G, f: F) -> T
 where Standard: Distribution<T> {
-    use std::iter;
+    use core::iter;
     iter::repeat(()).map(|_| g.gen()).find(f).unwrap()
 }

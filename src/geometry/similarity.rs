@@ -1,6 +1,6 @@
 use approx::{AbsDiffEq, RelativeEq, UlpsEq};
-use std::fmt;
-use std::hash;
+use core::fmt;
+use core::hash;
 #[cfg(feature = "abomonation-serialize")]
 use std::io::{Result as IOResult, Write};
 

@@ -16,7 +16,6 @@ edition = "2018"
 [features]
 default         = [ "std" ]
 std             = [ "nalgebra/std", "alga/std" ]
-stdweb          = [ "nalgebra/stdweb" ]
 arbitrary       = [ "nalgebra/arbitrary" ]
 serde-serialize = [ "nalgebra/serde-serialize" ]
 abomonation-serialize = [ "nalgebra/abomonation-serialize" ]

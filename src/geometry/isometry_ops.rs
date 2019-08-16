@@ -1,4 +1,4 @@
-use std::ops::{Div, DivAssign, Mul, MulAssign};
+use core::ops::{Div, DivAssign, Mul, MulAssign};
 
 use alga::general::RealField;
 use alga::linear::Rotation as AlgaRotation;
