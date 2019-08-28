@@ -724,10 +724,10 @@ where
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature="rand"))]
 mod tests {
     use super::*;
-    use rand::{SeedableRng, rngs::SmallRng};
+    use rand::{Rng, SeedableRng, rngs::SmallRng};
 
     #[test]
     fn random_unit_quats_are_unit() {
